@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XUEQI SONG</title>
+    <meta name="description" content="Thumbnail Grid with Expanding Preview" />
+    <meta name="keywords" content="thumbnails, grid, preview, google image search, jquery, image grid, expanding, preview, portfolio" />
+    <meta name="author" content="portfolio" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="css/social.css">
+    <script src="js/modernizr.custom.js"></script>
+    <style>
+        #map {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <div style="height: 800px;">
+        <div class="fadeIn one" style="position: absolute; top: 40vh; left: 50vw; width: 880px; display: table; text-align: center; transform: translate(-50%, -50%);">
+            <a href="#portfolio" class="scroll-link" data-id="portfolio">
+                <div class="blur welcome" style="background-color: rgb(141, 165, 192); padding: 10px;">
+                    <p id="welcome2" style="font-size: 0.09rem; letter-spacing: 0.09rem; text-align: center;">
+                        Xueqi Song
+                        <br>
+                    <p style="font-style: italic; font-size: 1.1rem; letter-spacing: 0.11rem;"></i> Portfolio</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="fadeIn five" id="sketch-holder" style="height: 770px; z-index: -10; position: absolute; top: 0px;">
+
+        </div>
+    </div>
+    <div id="backTo" style="top: 300px; position: absolute;"></div>
+    <div class="menu-toggle" id="hamburger">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="overlay"></div>
+    <div class="container">
+        <nav class="navigation">
+            <h1 class="brand"><a href="index.html"> <span></span></a></h1>
+            <ul>
+                <li><a href="#contact">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div style="padding:60% 0 0 0;position:relative;">
+        <iframe src="https://player.vimeo.com/video/414055045?autoplay=1&loop=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
+    <div class="nav-container">
+        <nav class="nav-inner transparent">
+            <div class="navbar navbar-fixed-top">
+                <div class="nav-container">
+                    <div class="row">
+                        <div class="list-menu"></div>
+                        <ul id="nav-menu">
+                            <li>
+                            </li>
+                            <li>
+                                <a href="https://vimeo.com/413760429" data-largesrc="images/geisha.jpeg" data-title="" data-titlelink="" data-description="">
+                                    <img src="images/source/geisha.jpeg" alt="img01" width="480" height="270" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://vimeo.com/413772488" data-largesrc="images/xiangpu.jpg" data-title="" data-description="">
+                                    <img src="images/source/xiangpu.jpg" alt="img02" width="480" height="270" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" data-largesrc="images/renzhe.jpeg" data-title="" data-description="">
+                                    <img src="images/source/renzhe.jpeg" alt="img03" width="480" height="270" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://vimeo.com/317121956" data-largesrc="images/touxiang.jpeg" data-title="" data-description="">
+                                    <img src="images/source/touxiang.jpeg" alt="img02" width="480" height="270" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" data-largesrc="images/blank.jpg" data-title="" data-description="">
+                                    <img src="images/source/blank.jpg" alt="img02" width="480" height="270" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-me"> Xueqi Song is a 3d digital artist currently located in New York. Born and raised in Hubei province of China, his specialist includes modeling, texturing, and animation. Xueqi Song is especially fond of character concept design, which he continued to develop in the MFA Computer Arts program at the School of Visual Arts.  </div>
+
+                <div id="map"></div>
+
+                <div id="contact" class="the-icons">
+                    <a href="https://www.artstation.com/xueqi" target="_blank"><i class="icon icon-icon-02"></i></a>
+                    <a href="https://www.instagram.com/sxq056/" target="_blank"><i class="icon icon-icon-03"></i></a>
+                    <a href="https://www.instagram.com/sxq056/" target="_blank"><i class="icon icon-icon-04"></i></a>
+                </div>
+
+                <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+                <script src="http://d3js.org/d3.v3.min.js"></script>
+                <script>
+                    var width = 1200,
+                        height = 800,
+                        margin = {
+                            top: 30,
+                            right: 40,
+                            bottom: 40,
+                            left: 100
+                        };
+
+                    var svg = d3.select("#map")
+                        .append("svg")
+                        .attr("width", width)
+                        .attr("height", height)
+                        .append("g")
+                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+                    var projection = d3.geo.mercator()
+                        .center([120, 30])
+                        .scale(400)
+                        .translate([width / 2, height / 2]);
+
+                    var path = d3.geo.path()
+                        .projection(projection);
+
+                    $.ajax({
+                        url: "json/china.geo.json",
+                        success: function (root) {
+                            var provinces = svg.selectAll("path")
+                                .data(root.features)
+                                .enter()
+                                .append("path")
+                                .attr("stroke", "#000")
+                                .attr("stroke-width", 1)
+                                .attr("fill", function (d, i) {
+                                    if (d.properties.name == "Hubei") {
+                                        return "rgb(161, 161, 161)";
+                                    }
+                                    return "#333";
+                                })
+                                .attr("d", path)
+                                .on("click", function (d) {
+                                })
+                        }
+                    })
+
+                </script>
+
+</body>
+</html>
